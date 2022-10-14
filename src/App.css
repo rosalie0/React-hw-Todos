@@ -9,7 +9,7 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	margin: 20px;
+	margin: 50px 20% 50px;
 	border-radius: 5px;
 	background-color: snow;
 }
@@ -18,13 +18,15 @@ header {
 	font-size: 72px;
 	color: rosybrown;
 }
-ul {
+
+.todo-container {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	padding: 30px;
 }
 
-li {
+.single-todo-div {
 	display: flex;
 	align-content: baseline;
 	list-style: none;
@@ -35,7 +37,7 @@ li {
 	padding: 5px;
 }
 
-li:hover {
+.single-todo-div:hover {
 	background-color: lavenderblush;
 }
 

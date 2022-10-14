@@ -9,12 +9,9 @@ function App() {
 		<div className="App">
 			<header>todos</header>
 			<div className="todo-container">
-				{/* <label>Todo Checkbox Label</label> */}
-				<ul>
-					{todos.map((todoName) => (
-						<SingleToDo key={todoName} todoName={todoName} />
-					))}
-				</ul>
+				{todos.map((todoName) => (
+					<SingleToDo key={todoName} todoName={todoName} />
+				))}
 			</div>
 		</div>
 	);

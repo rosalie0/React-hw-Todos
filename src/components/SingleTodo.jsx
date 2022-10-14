@@ -2,11 +2,15 @@
 import React from 'react';
 
 const SingleToDo = ({ todoName }) => {
+	function clickToDo() {
+		console.log('clicked button!');
+	}
+
 	return (
-		<li>
-			<input type="button" className="todoCheckbox" />
+		<div className="single-todo-div">
+			<input type="button" className="todoCheckbox" onClick={clickToDo} />
 			{todoName}
-		</li>
+		</div>
 	);
 };
 
