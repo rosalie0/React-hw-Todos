@@ -10,12 +10,16 @@ EXTRA CREDIT 2: Filter.jsx
 */
 import React from 'react';
 
-const Filter = () => {
+const Filter = ({ selectedFilter, setSelectedFilter }) => {
+	const buttonHandler = (filterName) => {
+		console.log(`Filter was "${selectedFilter}", changing to "${filterName}"`);
+		setSelectedFilter(filterName);
+	};
 	return (
 		<div className="filter-button-container">
-			<button> All </button>
-			<button> Active </button>
-			<button> Completed </button>
+			<button onClick={buttonHandler('all')}> All </button>
+			<button onClick={buttonHandler('active')}> Active </button>
+			<button onClick={buttonHandler('completed')}> Completed </button>
 		</div>
 	);
 };
