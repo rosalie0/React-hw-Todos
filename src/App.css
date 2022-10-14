@@ -1,3 +1,48 @@
 body {
-	background-color: cornsilk;
+	background-color: rgb(212, 143, 235);
+	color: rgb(63, 63, 63);
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin: 20px;
+	border-radius: 5px;
+	background-color: snow;
+}
+
+header {
+	font-size: 72px;
+	color: rosybrown;
+}
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+li {
+	display: flex;
+	align-content: baseline;
+	list-style: none;
+	font-size: 24px;
+
+	border: solid 1px lightblue;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+li:hover {
+	background-color: lavenderblush;
+}
+
+.todoCheckbox {
+	height: 28px;
+	width: 28px;
+	border-radius: 12px;
+	margin-right: 5px;
+	background-color: lightgrey;
 }

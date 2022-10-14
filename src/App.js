@@ -7,8 +7,9 @@ function App() {
 	const [todos, setTodos] = useState(dummyData);
 	return (
 		<div className="App">
-			<header>Todo List</header>
+			<header>todos</header>
 			<div className="todo-container">
+				{/* <label>Todo Checkbox Label</label> */}
 				<ul>
 					{todos.map((todoName) => (
 						<SingleToDo key={todoName} todoName={todoName} />
