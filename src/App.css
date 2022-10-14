@@ -48,3 +48,9 @@ header {
 	margin-right: 5px;
 	background-color: lightgrey;
 }
+
+.filter-button-container {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
