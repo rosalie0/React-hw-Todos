@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import SingleToDo from './components/SingleTodo';
 
+const dummyData = ['Write a UI', 'Bake cookies', 'Take over the world'];
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [todos, setTodos] = useState(dummyData);
+	return (
+		<div className="App">
+			<header>Todo List</header>
+			<div className="todo-container">
+				<ul>
+					{todos.map((todoName) => (
+						<SingleToDo key={todoName} todoName={todoName} />
+					))}
+				</ul>
+			</div>
+		</div>
+	);
 }
 
 export default App;
