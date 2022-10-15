@@ -19,7 +19,11 @@ function App() {
 			/>
 			<div className="todo-container">
 				{todos.map((todoName) => (
-					<SingleToDo key={todoName} todoName={todoName} />
+					<SingleToDo
+						key={todoName}
+						todoName={todoName}
+						selectedFilter={selectedFilter}
+					/>
 				))}
 			</div>
 		</div>

@@ -9,17 +9,22 @@ EXTRA CREDIT 2: Filter.jsx
     this to work - think about how data flows through the app
 */
 import React from 'react';
+const selectedFilterStyle = {
+	backgroundColor: 'pink',
+};
 
 const Filter = ({ selectedFilter, setSelectedFilter }) => {
-	const buttonHandler = (filterName) => {
-		console.log(`Filter was "${selectedFilter}", changing to "${filterName}"`);
-		setSelectedFilter(filterName);
-	};
 	return (
 		<div className="filter-button-container">
-			<button onClick={buttonHandler('all')}> All </button>
-			<button onClick={buttonHandler('active')}> Active </button>
-			<button onClick={buttonHandler('completed')}> Completed </button>
+			<button value="all" onClick={(e) => setSelectedFilter(e.target.value)}>
+				All
+			</button>
+			<button value="active" onClick={(e) => setSelectedFilter(e.target.value)}>
+				Active
+			</button>
+			<button onClick={(e) => setSelectedFilter(e.target.value)}>
+				Completed
+			</button>
 		</div>
 	);
 };
