@@ -12,6 +12,7 @@ body {
 	margin: 50px 20% 50px;
 	border-radius: 5px;
 	background-color: snow;
+	filter: drop-shadow(8px 10px 10px rgb(106, 59, 59));
 }
 
 header {
@@ -20,10 +21,11 @@ header {
 }
 
 .todo-container {
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	padding: 30px;
+	padding: 10px 30px;
 }
 
 .single-todo-div {
@@ -53,4 +55,13 @@ header {
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
+}
+
+.filter-button {
+	border: 1px solid royalblue;
+	border-radius: 4px;
+	padding: 5px;
+	font-style: italic;
+	font-size: 20px;
+	color: royalblue;
 }
