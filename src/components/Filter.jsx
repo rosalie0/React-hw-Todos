@@ -9,20 +9,36 @@ EXTRA CREDIT 2: Filter.jsx
     this to work - think about how data flows through the app
 */
 import React from 'react';
-const selectedFilterStyle = {
-	backgroundColor: 'pink',
-};
+
+// Button styles used to display if a filter is selected.
+const pinkButton = { backgroundColor: 'pink' };
+const whiteButton = { backgroundColor: 'white' };
 
 const Filter = ({ selectedFilter, setSelectedFilter }) => {
 	return (
 		<div className="filter-button-container">
-			<button value="all" onClick={(e) => setSelectedFilter(e.target.value)}>
+			<button
+				className="filter-button"
+				style={selectedFilter === 'all' ? pinkButton : whiteButton}
+				value="all"
+				onClick={(e) => setSelectedFilter(e.target.value)}
+			>
 				All
 			</button>
-			<button value="active" onClick={(e) => setSelectedFilter(e.target.value)}>
+			<button
+				className="filter-button"
+				style={selectedFilter === 'active' ? pinkButton : whiteButton}
+				value="active"
+				onClick={(e) => setSelectedFilter(e.target.value)}
+			>
 				Active
 			</button>
-			<button onClick={(e) => setSelectedFilter(e.target.value)}>
+			<button
+				className="filter-button"
+				style={selectedFilter === 'completed' ? pinkButton : whiteButton}
+				value="completed"
+				onClick={(e) => setSelectedFilter(e.target.value)}
+			>
 				Completed
 			</button>
 		</div>

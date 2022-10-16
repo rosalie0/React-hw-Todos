@@ -1,13 +1,8 @@
-//  Represents a single Todo item
 import React, { useState } from 'react';
 
-const strikeStyle = {
-	textDecorationLine: 'line-through',
-};
-
-const lowerOpacityStyle = {
-	opacity: '20%',
-};
+// Styles to decorate a completed task
+const strikeStyle = { textDecorationLine: 'line-through' };
+const lowerOpacityStyle = { opacity: '20%' };
 
 const SingleToDo = ({ todoName, selectedFilter }) => {
 	// State of if task completed or not.
@@ -19,9 +14,7 @@ const SingleToDo = ({ todoName, selectedFilter }) => {
 		setDone(!done); //toggle it
 	}
 
-	// if All, render regardless of done
-	// if Active, render !done
-	// if Completed, render done
+	// if filter 'active', render components that are done === false
 	if (selectedFilter === 'active')
 		return done ? (
 			''
@@ -36,12 +29,24 @@ const SingleToDo = ({ todoName, selectedFilter }) => {
 				<div style={done ? strikeStyle : null}>{todoName}</div>
 			</div>
 		);
-
-	// If 'completed', only render if done===true
-	if (selectedFilter === 'completed')
+	// If filter 'completed', only render if done===true
+	else if (selectedFilter === 'completed')
 		return done ? (
-			''
+			<div className="single-todo-div" style={done ? lowerOpacityStyle : null}>
+				<input
+					type="button"
+					className="todoCheckbox"
+					onClick={clickToDo}
+					value={done ? '✔' : ''} //If done, gets a checkmark
+				/>
+				<div style={done ? strikeStyle : null}>{todoName}</div>
+			</div>
 		) : (
+			''
+		);
+	// if filter 'all' (aka not completed or active), render all components
+	else
+		return (
 			<div className="single-todo-div" style={done ? lowerOpacityStyle : null}>
 				<input
 					type="button"
@@ -52,18 +57,6 @@ const SingleToDo = ({ todoName, selectedFilter }) => {
 				<div style={done ? strikeStyle : null}>{todoName}</div>
 			</div>
 		);
-
-	return (
-		<div className="single-todo-div" style={done ? lowerOpacityStyle : null}>
-			<input
-				type="button"
-				className="todoCheckbox"
-				onClick={clickToDo}
-				value={done ? '✔' : ''} //If done, gets a checkmark
-			/>
-			<div style={done ? strikeStyle : null}>{todoName}</div>
-		</div>
-	);
 };
 
 export default SingleToDo;
